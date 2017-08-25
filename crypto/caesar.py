@@ -7,9 +7,14 @@ def rotate_character(char, rot):
     if not char.isalpha():
         return char
     else:
+        is_upper = False
+        if char >= 'A' and char <= 'Z':
+            is_upper = True
         num = alphabet_position(char)   #index of char 
         num = num + rot                 #index of char moved over rot
-        alpha = alphabet[num % 26]      #num coverted to letter using alphabet 
+        alpha = alphabet[num % 26]      #num coverted to letter using []
+        if is_upper:
+            return alpha.upper()
         return alpha
 
 #print(rotate_character('a',13))
