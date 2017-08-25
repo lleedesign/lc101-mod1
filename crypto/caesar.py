@@ -1,11 +1,16 @@
+alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
 def alphabet_position(letter):
-    alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
     return alphabet.index(letter.lower())
 
 def rotate_character(char, rot):
-    n = alphabet_position(char)
-    n = n + rot
-    return n 
+    if not char.isalpha():
+        return char
+    else:
+        num = alphabet_position(char)   #index of char 
+        num = num + rot                 #index of char moved over rot
+        alpha = alphabet[num % 26]      #num coverted to letter using alphabet list [ ]
+        return alpha
 
 
 print(rotate_character('a',13))
