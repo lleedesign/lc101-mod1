@@ -17,7 +17,7 @@ def rotate_character(char, rot):
             return alpha.upper()
         return alpha
 
-#print(rotate_character('a',13))
+#print(rotate_character('a',13))        #for testing
 
 def encrypt(text, rot):
     output = ''
@@ -25,4 +25,12 @@ def encrypt(text, rot):
         output += rotate_character(a, rot)
     return output 
 
-print(encrypt("LaunchCode", 13))
+#print(encrypt("LaunchCode", 13))       #for testing
+
+def main():
+    text = input("Type a message: ")    
+    rot = int(input("Rotate by: "))
+    print(encrypt(text, rot))
+
+if __name__ == "__main__":
+    main()
